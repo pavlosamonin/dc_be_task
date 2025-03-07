@@ -1,0 +1,54 @@
+{
+  "name": "text-file-search-engine",
+  "version": "1.0.0",
+  "description": "A Nest.js-based search engine for text files with a RESTful API",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "start:dev": "nest start --watch",
+    "build": "nest build",
+    "lint": "eslint . --ext .ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nestjs/common": "11.0.11",
+    "@nestjs/config": "4.0.1",
+    "@nestjs/core": "11.0.11",
+    "@nestjs/event-emitter": "^3.0.1",
+    "@nestjs/platform-express": "^11.0.11",
+    "@nestjs/platform-socket.io": "^11.0.11",
+    "@nestjs/platform-ws": "^11.0.11",
+    "@nestjs/websockets": "^11.0.11",
+    "@redis/client": "^1.6.0",
+    "@types/amqplib": "^0.10.7",
+    "amqplib": "^0.10.5",
+    "dotenv": "^16.3.1",
+    "redis": "^4.7.0",
+    "rxjs": "^7.8.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "11.0.5",
+    "@nestjs/testing": "11.0.11",
+    "@types/socket.io": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "8.26.0",
+    "@typescript-eslint/parser": "8.26.0",
+    "eslint": "9.21.0",
+    "express": "^5.0.1",
+    "jest": "^29.7.0",
+    "supertest": "7.0.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "search",
+    "text files",
+    "REST API"
+  ],
+  "author": "Pavlo Samonin",
+  "license": "MIT"
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search with Progress</title>
+    <script>
+        // Determine if we're in the browser or Docker environment
+        const socketUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : 'http://backend:3000';
+        const script = document.createElement('script');
+        script.src = `${socketUrl}/socket.io/socket.io.js`;
+        document.head.appendChild(script);
+    </script>
+</head>
+<body>
+
+<h1>Search for Files</h1>
+<input type="text" id="searchInput" placeholder="Enter search text">
+<button onclick="performSearch()">Search</button>
+
+<h2>Progress</h2>
+<div id="progress"></div>
+
+<h2>Search Results</h2>
+<div id="searchResult"></div>
+
+<script src="client-side.js"></script>
+</body>
+</html>
