@@ -7,7 +7,7 @@ async function bootstrap() {
     app.enableCors();
 
     app.useWebSocketAdapter(new IoAdapter(app));
-    await app.listen(3000);  // Start the app on port 3000
+    await app.listen(3000);
 }
 
 bootstrap();

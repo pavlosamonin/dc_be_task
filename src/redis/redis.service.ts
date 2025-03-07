@@ -22,13 +22,13 @@ export class RedisService {
     }
 
     async getFilesByContent(searchText: string): Promise<string[]> {
-        const keys = await this.redisClient.keys('file:*'); // Get all file keys
+        const keys = await this.redisClient.keys('file:*');
         const matchingFiles: string[] = [];
 
         for (const key of keys) {
             const content = await this.redisClient.get(key);
             if (content && content.includes(searchText)) {
-                matchingFiles.push(key.replace('file:', '')); // Remove prefix
+                matchingFiles.push(key.replace('file:', ''));
             }
         }
 
@@ -46,6 +46,6 @@ export class RedisService {
     }
 
     async close() {
-        await this.redisClient.quit(); // Close the Redis client connection when done
+        await this.redisClient.quit();
     }
 }

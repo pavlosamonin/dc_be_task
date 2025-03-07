@@ -24,7 +24,7 @@ export class SearchService {
 
         if (result.length === 0) {
             this.logger.warn(`No matching files found in Redis for: ${searchText}, sending directory scan request...`);
-            await this.queueService.sendDirectoryScanRequest(); // Request directory scan
+            await this.queueService.sendDirectoryScanRequest();
 
             await new Promise<void>((resolve) => {
                 this.logger.log('Waiting for scanComplete event...');

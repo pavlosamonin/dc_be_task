@@ -4,19 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInterval(checkIo);
             // Establish WebSocket connection to the backend
             const socket = io('http://localhost:3000', {
-                transports: ['polling', 'websocket'], // Ensure these transports are allowed
-                withCredentials: true, // If you need to send credentials (cookies), enable this
+                transports: ['polling', 'websocket'],
+                withCredentials: true,
             });
             socket.on("connect", () => console.log("Connected to WebSocket server"));
             // Listen for progress updates
             socket.on('progress', (data) => {
                 console.log('Progress update received:', data.message);
-                document.getElementById('progress').innerText = data.message; // Show progress on the page
+                document.getElementById('progress').innerText = data.message;
             });
             // Listen for directory scan event
             socket.on('directoryScanEvent', (data) => {
                 console.log('Directory scan event received:', data.message);
-                // Optionally update the UI here to reflect that a directory scan has started
             });
         }
     }, 100);
@@ -32,7 +31,7 @@ function performSearch() {
     }
 
     fetch(`http://localhost:3000/search?text=${encodeURIComponent(searchText)}`)
-        .then(response => response.json()) // Assuming your backend returns JSON
+        .then(response => response.json())
         .then(data => {
             document.getElementById('searchResult').innerText = `Results: ${JSON.stringify(data)}`;
         })

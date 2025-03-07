@@ -7,7 +7,6 @@ export class AppService implements OnModuleInit {
 
     constructor(@Inject(QueueService) private readonly queueService: QueueService) {}
 
-    // Called when the module is initialized
     async onModuleInit() {
         this.logger.log('Sending directory scan request to queue...');
         await this.queueService.sendDirectoryScanRequest();

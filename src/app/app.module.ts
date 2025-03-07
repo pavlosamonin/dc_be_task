@@ -16,6 +16,6 @@ import {EventEmitterModule} from "@nestjs/event-emitter";
         FileScannerModule,
         EventEmitterModule.forRoot()
     ],
-    providers: [AppService], // AppService will trigger the scan request
+    providers: [AppService],
 })
 export class AppModule {}
